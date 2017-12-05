@@ -19,7 +19,7 @@ namespace textInput
         public static string password = string.Empty;
         bool firstText = false;
         private SpriteBatch spriteBatch;
-        public bool Done = false;
+        public static bool Done = false;
         public bool IsMouseVisible { get; private set; }
 
         public string Name

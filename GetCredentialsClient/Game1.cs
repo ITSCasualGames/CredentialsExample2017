@@ -24,6 +24,7 @@ namespace GetCredentialsClient
 
         HubConnection serverConnection;
         IHubProxy proxy;
+        private SpriteFont font;
 
         public bool Connected { get; private set; }
         public Game1()
@@ -76,7 +77,10 @@ namespace GetCredentialsClient
 
         private void checkLogin()
         {
-            if (Connected && GetGameInputComponent.name != string.Empty && GetGameInputComponent.password != string.Empty
+            if (Connected && 
+                GetGameInputComponent.name != string.Empty && 
+                GetGameInputComponent.password != string.Empty 
+                && GetGameInputComponent.Done
 
                 )
             {
@@ -105,7 +109,7 @@ namespace GetCredentialsClient
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+            font = Content.Load<SpriteFont>("keyboardfont");
             // TODO: use this.Content to load your game content here
         }
 
@@ -155,6 +159,9 @@ namespace GetCredentialsClient
             // TODO: Add your drawing code here
             if(state == PlayerDataState.LOGGEDIN)
             {
+                spriteBatch.Begin();
+                spriteBatch.DrawString(font, playerData.GamerTag, new Vector2(100, 100), Color.White);
+                spriteBatch.End();
                 //Draw string player details
             }
             base.Draw(gameTime);

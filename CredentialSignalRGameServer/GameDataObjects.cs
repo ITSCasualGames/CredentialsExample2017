@@ -13,14 +13,14 @@ namespace CredentialSignalRGameServer
                 new PlayerData {
                 playerID = Guid.NewGuid().ToString(),
                 CharacterImage = "Player 1",
-                GamerTag ="High Flyer",  Password = "plrxxx1",
-                PlayerName= "Paul", XP = 2000},
+                GamerTag ="High Flyer",  Password = "plrx",
+                PlayerName= "paul", XP = 2000},
 
                 new PlayerData {
                 playerID = Guid.NewGuid().ToString(),
                 CharacterImage = "Player 2",
-                GamerTag ="Bug Hunter",  Password = "plrxxx2",
-                PlayerName= "Fred", XP = 200},
+                GamerTag ="Bug Hunter",  Password = "plrxx",
+                PlayerName= "fred", XP = 200},
 
             };
 
